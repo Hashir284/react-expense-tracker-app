@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
 import AllProductTableRender from './components/allProductTableRender';
@@ -54,12 +53,12 @@ useEffect(()=>{
   let fitleredData = [...allProductDetails]
   if(filter.hasOwnProperty('transactionType')){
     fitleredData = fitleredData.filter((e, i)=>{
-      return e.transactionType == filter.transactionType
+      return e.transactionType === filter.transactionType
     })
   }
   if(filter.hasOwnProperty('category')){
     fitleredData = fitleredData.filter((e, i)=>{
-      return e.category == filter.category
+      return e.category === filter.category
     })
   }
   if(filter.hasOwnProperty('search')){
@@ -68,18 +67,18 @@ useEffect(()=>{
     })
   }
   if(filter.hasOwnProperty('sort')){
-    if(filter.sort == 'lowToHigh'){
+    if(filter.sort === 'lowToHigh'){
       fitleredData = fitleredData.sort((a,b)=> a.transaction-b.transaction)
     }
-    if(filter.sort == 'highToLow'){
+    if(filter.sort === 'highToLow'){
       fitleredData = fitleredData.sort((a,b)=> b.transaction-a.transaction)
     }
-    if(filter.sort == 'aToZ'){
+    if(filter.sort === 'aToZ'){
       // a-b>= 1 swap
       // a-b<= -1 no swap
       fitleredData = fitleredData.sort((a,b)=> a.productName>b.productName ? 1 : -1)
     }
-    if(filter.sort == 'zToA'){
+    if(filter.sort === 'zToA'){
       fitleredData = fitleredData.sort((a,b)=> b.productName>a.productName ? 1 : -1)
     }
     // highToLow
@@ -96,16 +95,16 @@ useEffect(()=>{
   let expense = 0
 
   allProductDetails.forEach((e, i)=>{
-    if(e.transactionType == 'income'){
+    if(e.transactionType === 'income'){
       income += Number(e.transaction)
     }
-    if(e.transactionType == 'expense'){
+    if(e.transactionType === 'expense'){
       expense += Number(e.transaction)
     }
   })
 
   let balance = allProductDetails.reduce((acc, curr)=>{
-    if(curr.transactionType == 'expense'){
+    if(curr.transactionType === 'expense'){
       return acc - Number(curr.transaction)
     }else{ 
       return acc + Number(curr.transaction)
@@ -127,7 +126,7 @@ const getData = (e) =>{
   else{
     setAllProductDetails(
       allProductDetails.map((e, i)=>{
-        if(i == editIndex){
+        if(i === Number(editIndex)){
           return {productName, transaction, category, transactionType}
         }
         return e

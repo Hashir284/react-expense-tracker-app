@@ -8,6 +8,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <App />
 );
+// Built an Expense Tracker from scratch in React. Every feature, including CRUD operations, filtering, searching, and calculations, was implemented by me without following a tutorial.
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

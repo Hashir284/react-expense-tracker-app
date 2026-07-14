@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import AllProductTableRender from './components/allProductTableRender';
 
 function App() {
-  // Built an Expense Tracker from scratch in React. Every feature, including CRUD operations, filtering, searching, and calculations, was implemented by me without following a tutorial.
 
   const [productName, setProductName] = useState('')
   const [transaction, setTransaction] = useState('')
@@ -163,9 +162,8 @@ const edit = (index) =>{
   return (
     <div className="App min-h-screen bg-slate-950 text-slate-100 pb-20 font-sans antialiased selection:bg-blue-600 selection:text-white">
       
-      {/* Clean Header */}
-      <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur-md sticky top-0 z-50 py-5 px-4 sm:px-6">
-        <div className="max-w-6xl sm:items-start sm:justify-center mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+      <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur-md sm:sticky top-0 z-50 py-5 px-4 sm:px-6">
+        <div className="max-w-6xl sm:items-center gap-y-4 mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className=''>
             <h1 className="text-xl sm:text-2xl text-center font-bold text-white tracking-tight">FinTrack Pro</h1>
             <p className="text-xs sm:text-sm text-slate-400 mt-1 font-medium">Professional Ledger & Capital Management</p>
@@ -179,7 +177,6 @@ const edit = (index) =>{
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 mt-10 space-y-10">
 
-        {/* Clean, Simple, Bold Metric Cards */}
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
           <div className="bg-slate-900 border border-slate-800 p-6 rounded-xl shadow-sm">
@@ -211,10 +208,8 @@ const edit = (index) =>{
           </div>
         </section>
 
-        {/* Workspace Layout */}
         <div className="grid grid-cols-1 xl:grid-cols-12 lg:gap-0 lg:gap-y-9 xl:gap-8 gap-8 justify-items-center items-start">
           
-          {/* Professional Form Widget */}
           <section className="lg:col-span-4 w-full lg:max-w-[820px] bg-slate-900 xl:px-6 border border-slate-800 p-6 sm:p-7 rounded-xl shadow-md">
             <h2 className="text-base sm:text-lg font-bold text-white mb-6 flex items-center gap-2 border-b border-slate-800 pb-4">
               <span className="h-2.5 w-2.5 bg-blue-500 rounded-full"></span>
@@ -295,10 +290,8 @@ const edit = (index) =>{
             </form>
           </section>
 
-          {/* Database Grid Section */}
           <section className="lg:col-span-8 space-y-5">
             
-            {/* Highly Intuitive Filtering Header */}
             <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 shadow-sm">
               <input 
                 type="search" 
@@ -359,16 +352,10 @@ const edit = (index) =>{
               </select>
             </div>
 
-            {/* Clean Table Grid Container */}
             <div className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-md">
-              {/* Header Titles */}
-            {/* Replace your Table Header div with this inside App.js */}
-{/* Replace your Table Header div with this inside App.js */}
 <div className="hidden sm:flex justify-between items-center gap-4 px-6 py-4.5 bg-slate-950 text-xs sm:text-sm font-bold text-slate-400 uppercase tracking-wider border-b border-slate-800">
-  {/* Name Header */}
   <div className="flex-1 text-left py-5">Record / Item</div>
   
-  {/* Right Side Headers (Matched with row centers) */}
   <div className="flex items-center gap-8 shrink-0">
     <div className="w-48 text-center">Category</div>
     <div className="w-32 text-center">Value (PKR)</div>
@@ -376,7 +363,6 @@ const edit = (index) =>{
   </div>
 </div>
 
-              {/* Rows render */}
               <div className="divide-y divide-slate-800/80">
                 {renderingProductDetails.map((e, i)=>{
                   return <AllProductTableRender e={e} key={i} edit={edit} del={del} index={i}/>

@@ -51,7 +51,7 @@ useEffect(()=>{
   
   if(filter.hasOwnProperty('transactionType')){
     fitleredData = fitleredData.filter((e, i)=>{
-      if(filter.transactionType == 'all'){
+      if(filter.transactionType === 'all'){
         return e.transactionType
       } 
       return e.transactionType === filter.transactionType
@@ -59,7 +59,7 @@ useEffect(()=>{
   }
   if(filter.hasOwnProperty('category')){
     fitleredData = fitleredData.filter((e, i)=>{
-      if(filter.category == 'all'){
+      if(filter.category === 'all'){
         return e.category
       } 
       console.log('e',e);
